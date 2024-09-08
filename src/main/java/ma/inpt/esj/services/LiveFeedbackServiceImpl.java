@@ -45,16 +45,19 @@ public class LiveFeedbackServiceImpl implements LiveFeedbackService {
                 .collect(Collectors.toList());
 	}
 	
-	public Map<LiveEvaluation, Integer> getEvaluation(int liveId){
+	public Map<String, Integer> getEvaluation(int liveId){
 		List<LiveFeedback> feedbackList = this.liveFeedbackRepo.findByLiveId(liveId);
-		Map<LiveEvaluation, Integer> evaluationCount = new HashMap<>();
+		Map<String, Integer> evaluationCount = new HashMap<>();
 		
-		for (LiveEvaluation evaluation : LiveEvaluation.values()) {
-	        evaluationCount.put(evaluation, 0);
-	    }
+		evaluationCount.put("0", 0);
+		evaluationCount.put("1", 0);
+		evaluationCount.put("2", 0);
+		evaluationCount.put("3", 0);
+		evaluationCount.put("4", 0);
+		evaluationCount.put("5", 0);
 		
 		feedbackList.forEach(feedback -> {
-	        LiveEvaluation evaluation = feedback.getEvaluation();
+	        String evaluation = feedback.getEvaluation();
 	        evaluationCount.put(evaluation, evaluationCount.get(evaluation) + 1);
 	    });
 

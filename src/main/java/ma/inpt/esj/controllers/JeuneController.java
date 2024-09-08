@@ -190,6 +190,7 @@ public class JeuneController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error creating Live feedback: "+e.getMessage());
         }
     }
+
     @GetMapping("/jeunes/{jeuneId}/streams/last")
     public ResponseEntity<LiveDTO> getSingleLive(@PathVariable int jeuneId) {
     	try {

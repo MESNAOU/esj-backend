@@ -137,9 +137,9 @@ public class LiveController {
         }
         
         @GetMapping("/{liveId}/evaluations")
-        public ResponseEntity<Map<LiveEvaluation, Integer>> getAllLiveFeedbackEvaluations(@PathVariable int liveId){
+        public ResponseEntity<Map<String, Integer>> getAllLiveFeedbackEvaluations(@PathVariable int liveId){
     		try {
-    			Map<LiveEvaluation, Integer> l = this.liveFeedbackService.getEvaluation(liveId);
+    			Map<String, Integer> l = this.liveFeedbackService.getEvaluation(liveId);
     			return ResponseEntity.status(HttpStatus.OK).body(l);
     		} catch (Exception e) {
     			e.printStackTrace();

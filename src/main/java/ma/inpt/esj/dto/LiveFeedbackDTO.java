@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ma.inpt.esj.enums.LiveEvaluation;
 
 @Getter
 @Setter
@@ -17,7 +16,7 @@ import ma.inpt.esj.enums.LiveEvaluation;
 public class LiveFeedbackDTO {
 	private int id;
 	
-	private LiveEvaluation evaluation;
+	private String evaluation;
 	private boolean recommended;
 	private String suggestedTheme;
 	private String opinion;

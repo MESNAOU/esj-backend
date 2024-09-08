@@ -18,7 +18,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ma.inpt.esj.dto.LiveFeedbackDTO;
-import ma.inpt.esj.enums.LiveEvaluation;
 
 @Entity
 @Builder
@@ -31,7 +30,7 @@ public class LiveFeedback {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "generated")
 	private int id;
 	
-	private LiveEvaluation evaluation;
+	private String evaluation;
 	
 	@Column(nullable = false)
 	private boolean recommended;

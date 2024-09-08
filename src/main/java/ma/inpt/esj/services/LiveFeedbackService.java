@@ -13,7 +13,7 @@ public interface LiveFeedbackService {
 	
 	public List<String> getSuggestedThemes(int liveId);
 	
-	public Map<LiveEvaluation, Integer> getEvaluation(int liveId);
+	public Map<String, Integer> getEvaluation(int liveId);
 	
 	public Map<Boolean, Integer> getRecommended(int liveId);
 	
